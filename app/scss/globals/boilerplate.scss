@@ -1,0 +1,30 @@
+@use '../util' as *;
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    padding: rem(81) rem(24);
+    font-family: var(--font-rubik);
+    background: var(--background);
+    color: var(--white-text);
+    margin: 0 auto;
+
+    @include breakpoint(large){
+    padding: rem(253) rem(165);
+    }
+  }
+
+  main {
+    max-width: rem(1110);
+    margin-bottom: rem(15);
+  }
+  

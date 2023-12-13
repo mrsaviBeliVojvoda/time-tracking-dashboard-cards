@@ -1,0 +1,213 @@
+@use '../util' as *;
+
+.box {
+    --colors: var(--image-card), var(--works-card), var(--play-card), var(--study-card), var(--exercise-card), var(--social-card), var(--selfcare-card);
+    --n: 7;
+    --i: 0;
+    background:
+    linear-gradient(var(--colors)) no-repeat
+     0 calc(var(--i)*100% / (var(--n) - 1))
+     /100% calc(1px * infinity);
+}
+
+.box::before {
+    counter-reset: index var(--i);
+    display: block;
+}
+
+.card {
+    display: grid;
+    width: rem(328);
+    grid-template-columns: rem(328);
+    gap: rem(25);
+
+    @include breakpoint(large) {
+    width: rem(255);
+    grid-template-columns: rem(255) rem(255) rem(255) rem(255);
+    gap: rem(30);
+    }
+    
+    &__summary {
+        color: var(--text-pale-blue);
+        font-size: rem(10);
+
+        @include breakpoint(large) {
+        font-size: rem(12);
+        }  
+    }
+
+    &__time {
+        font-weight: 300;
+        font-size: rem(24);
+
+        @include breakpoint(large) {
+        font-size: rem(45);
+        
+        }
+    }
+
+
+    &__flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: rem(16);
+        align-items: center;
+
+        @include breakpoint(large){
+        margin-bottom: rem(36);
+        
+        }
+    }
+    &__activity-name img {
+        cursor: pointer;
+
+    }
+
+    &__activity-name {
+        font-size: rem(12);
+        font-weight: 500;
+
+        @include breakpoint(large) {
+        font-size: rem(14);
+        }
+    }
+
+    &__svg {
+        height: rem(60);
+        width: auto;
+        position: relative;
+        left: rem(-15);
+        top: rem(-5);
+        text-align: right;
+        overflow: hidden;
+    }
+
+    &__image {
+        border-radius: rem(15);
+        height: rem(132);
+
+        @include breakpoint(large){
+        
+        height: rem(354);
+        padding: rem(35);
+        }
+       
+        &-name {
+            color: var(--white-text);
+            font-size: rem(18);
+            font-weight: 300;
+
+            @include breakpoint(large){
+            font-size: rem(30);
+            }
+        }
+    }
+
+    &__activity {
+        border-radius: 15px;
+        overflow: hidden;
+        height: rem(160);
+
+        @include breakpoint(large) {
+        height: rem(244);
+        }
+
+        &-darkblue {
+            padding: rem(35) rem(25);
+            height: rem(120);
+            border-radius: rem(15);
+            background: var(--main-card-color);
+            position: relative;
+            top: rem(-20);
+
+            @include breakpoint(large) {
+            padding: rem(32);
+            height: rem(199);
+            position: relative;
+            top: rem(-14);
+            }
+
+
+            &:hover {
+                background: var(--hover-card);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.small-mod {
+    padding-left: rem(25);
+    font-size: rem(12);
+    color: var(--text-pale-blue);
+
+    @include breakpoint(large){
+    padding-left: 0;
+    }
+}
+
+.grid {
+    background: var(--main-card-color);
+    border-radius: rem(15);
+    height: rem(200);
+
+    @include breakpoint(large){
+    grid-row: 1 / 3;
+    height: rem(518);
+    }
+
+}
+
+#photo {
+    border: 2px solid var(--white-text);
+    border-radius: 50%;
+    height: rem(70);
+
+    @include breakpoint(large){
+    display: block;
+    height: rem(85);
+    margin-bottom: rem(30);
+    }
+    
+}
+
+.flex-small {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(large){
+      display: block;
+    }
+    
+}
+
+.card__image-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 rem(100) 0 rem(30);
+    justify-content: space-between;
+
+    @include breakpoint(large){
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: rem(35);
+    }
+}
+
+.name-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: rem(4);
+    padding-left: rem(25);
+
+    @include breakpoint(large){
+        display:block;
+        padding-left: 0;
+    }
+}

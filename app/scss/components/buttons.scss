@@ -1,0 +1,52 @@
+@use '../util' as *;
+
+#radio1,
+#radio2,
+#radio3 {
+    all: unset;
+    
+}
+
+label[for='radio1']:hover,
+label[for='radio2']:hover,
+label[for='radio3']:hover{
+    color: var(--white-text);
+    cursor: pointer;
+}
+
+input[type='radio']:checked ~ label{
+    color: var(--white-text);
+    caret-color: transparent;
+}
+
+fieldset {
+    border: none;
+    
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: rem(20);
+    list-style-type: none;
+    font-size: rem(14);
+    margin-left: rem(-40);
+    color: var(--text-pale-blue);
+
+    @include breakpoint(large){
+    margin-top: rem(40);
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    
+    }
+}
+
+li {
+    margin-left: rem(-20);
+
+    @include breakpoint(large){
+        margin-left: rem(20);
+    }
+}

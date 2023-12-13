@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/style.css" />
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main class="big-flexbox">
+    <section class="card">
+      <div class="grid">
+        <div class="card__image box card__image-flex">
+          <img id="photo" src="/images/image-jeremy.png" alt="Jeremy Robson Photo" />
+          <div>
+            <div class="small-mod">Report for</div>
+            <div class="name-grid">
+              <div class="card__image-name">Jeremy</div>
+              <div class="card__image-name">Robson</div>
+            </div>
+          </div>
+        </div>
+        <fieldset role="radiogroup" aria-label="buttons">
+          <ul>
+            <li>
+                <input type='radio' value='1' name='radio' onchange="handleChange()" id='radio1' checked/>
+                <label for='radio1'>Daily</label>
+            </li>
+            <li>
+                <input type='radio' value='2' name='radio' onchange="handleChange();" id='radio2'/>
+                <label for='radio2'>Weekly</label>
+            </li>
+            <li>
+                <input type='radio' value='3' name='radio' onchange="handleChange();" id='radio3'/>
+                <label for='radio3'>Monthly</label>
+            </li>
+        </ul>
+      </fieldset>
+      </div>
+      <div class="card__activity box" style="--i:1">
+        <div class="card__svg">
+          <img src="/images/icon-work.svg" alt="Work">
+        </div>
+        <div class="card__activity-darkblue">
+          <div class="card__flex card__activity-name">Work
+            <img src="/images/icon-ellipsis.svg" alt="Three Dots"/>
+          </div>
+          <div class="flex-small">
+            <div id="workTime" class="card__time"></div>
+            <div id="workSummary" class="card__summary"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__activity box" style="--i:2">
+        <div class="card__svg">
+          <img src="/images/icon-play.svg" alt="Play">
+        </div>
+        <div class="card__activity-darkblue">
+          <div class="card__flex card__activity-name">Play
+            <img src="/images/icon-ellipsis.svg" alt="Three Dots"/>
+          </div>
+          <div class="flex-small">
+            <div id="playTime" class="card__time"></div>
+            <div id="playSummary" class="card__summary"></div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="card__activity box" style="--i:3">
+        <div class="card__svg">
+          <img src="/images/icon-study.svg" alt="Study">
+        </div>
+        <div class="card__activity-darkblue">
+          <div class="card__flex card__activity-name">Study
+            <img src="/images/icon-ellipsis.svg" alt="Three Dots"/>
+          </div>
+          <div class="flex-small">
+            <div id="studyTime" class="card__time"></div>
+            <div id="studySummary" class="card__summary"></div>
+          </div>  
+        </div>
+      </div>
+
+      <div class="card__activity box" style="--i:4">
+        <div class="card__svg">
+          <img src="/images/icon-exercise.svg" alt="Exercise">
+        </div>
+        <div class="card__activity-darkblue">
+          <div class="card__flex card__activity-name">Exercise
+            <img src="/images/icon-ellipsis.svg" alt="Three Dots"/>
+          </div>
+          <div class="flex-small">
+            <div id="exerciseTime" class="card__time"></div>
+            <div id="exerciseSummary" class="card__summary"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__activity box" style="--i:5">
+        <div class="card__svg">
+          <img src="/images/icon-social.svg" alt="Social">
+        </div>
+        <div class="card__activity-darkblue">
+          <div class="card__flex card__activity-name">Social
+            <img src="/images/icon-ellipsis.svg" alt="Three Dots"/>
+          </div>
+          <div class="flex-small">
+            <div id="socialTime" class="card__time"></div>
+            <div id="socialSummary" class="card__summary"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card__activity box" style="--i:6">
+        <div class="card__svg">
+          <img src="/images/icon-self-care.svg" alt="Self Care">
+        </div>
+        <div class="card__activity-darkblue">
+          <div class="card__flex card__activity-name">Self Care
+            <img src="/images/icon-ellipsis.svg" alt="Three Dots"/>
+          </div>
+          <div class="flex-small">
+            <div id="careTime" class="card__time"></div>
+            <div id="careSummary" class="card__summary"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script defer src="/dist/script.js"></script>
+</body>
+</html>
